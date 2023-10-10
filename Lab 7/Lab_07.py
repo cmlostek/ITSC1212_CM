@@ -120,14 +120,16 @@ my_list = [3, 9, -32, 53, 54, 17, 63, 63, 95, -16, 38, -15]
 pos_list = []
 e_count = my_str.count("e")
 for i in range(len(my_list)):
-    if i > 0:
-        pos_list.append(i)
+    if my_list[i] > 0:
+        pos_list.append(my_list[i])
     else:
         continue
+print(pos_list)
 pos_average = sum(pos_list) / len(pos_list)
+print(pos_average)
 print(e_count)
 name_str = input("What is your first name?")
-for i in name_str:
+for i in name_str[::-1]:
     print(i)
 # Problem 9
 

@@ -65,7 +65,19 @@ words2 = ['Work', 'had', 'been', 'piling', 'up', 'lately', '.', 'Work,', 'work,'
     'work', 'seemed', 'to', 'be', 'the', 'theme', 'of', 'the', 'day', '.', 'Day',
     'turned', 'into', 'night', ',', 'and', 'work', 'is', 'still', 'piling', 'up', '.']
 
+# Do not modify the lines
+
 # Do not modify the lines above
+
+# Initial Problem
+for i in words2:
+    sentence = " ".join(words)
+print(sentence)
+
+# Possible Improvement
+sentence = sentence.replace(" ,", ",")
+sentence = sentence.replace(" .", ".")
+print(sentence)
 
 # In lab7_p5.py you are given a list of strings.
 # Complete the program, so it combines the strings into one string and then display the new string.
@@ -131,6 +143,7 @@ print(e_count)
 name_str = input("What is your first name?")
 for i in name_str[::-1]:
     print(i)
+
 # Problem 9
 
 presidents = ["Washington, George, 2/22/1732, 12/14/1799", "Adams, John, 10/30/1735, 7/4/1826",

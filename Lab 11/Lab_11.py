@@ -1,56 +1,69 @@
-def read_data_file(filename):
-    data_file = open(filename, "r")
-    header_line = data_file.readline()  # Read the header line of the file to extract years
+# Problem 1
 
-    years = header_line.strip().split(",")[1:]  # Extract the years from the header line
-
-    # Initialize an empty dictionary to store the data
-    data_dict = {}
-
-    # Iterate over each line in the data file
-    for line in data_file:
-
-        # Remove leading and trailing whitespaces, and split the line into a list using commas
-        line = line.strip().split(",")
-        # Create a nested dictionary for each county in the data_dict
-        data_dict[line[0]] = {}
-
-        # Iterate over the years and assign the corresponding values to the data_dict
-        for i in range(0, len(years)):
-            data_dict[line[0]][int(years[i])] = line[i + 1]
-
-    # Close the file
-    data_file.close()
-
-    # Return the final data dictionary
-    return data_dict
+def add(a, b):
+    # add your code here
+    total = a + b
+    return print(total)
 
 
-# Uncomment the following line to display the dictionary data structure
-# print(read_data_file("coal_production.csv"))
-
-# Add your code here
-def calculate_total_production(coal_production_data):
-    total_production_by_county = {}
-
-    counties = list(coal_production_data.keys())
-
-    i = 0
-    while i < len(counties):
-        county = counties[i]
-        production_data = coal_production_data[county]
-        total_production = 0
-        for year in production_data:
-            total_production += int(production_data[year])
-        total_production_by_county[county] = total_production
-        i += 1
-
-    return total_production_by_county
+# the following statements call the add function.
+# when everything works as expected the program will display 7 and 99.
+add(1, 6)
+add(-1, 100)
 
 
-coal_data = read_data_file("coal_production.csv")
-total_production_result = calculate_total_production(coal_data)
+# Problem 2
 
-# Print the result
-for key, value in total_production_result.items():
-    print("The county", key, "has a total coal production of", value)
+def iseven(num):
+    # add your code here
+    return num % 2 == 0
+
+
+# the following statements call the isEven function.
+# when everything works as expected the program will display True and False.
+print(iseven(56))
+print(iseven(1))
+
+
+# Problem 3
+num_even = []
+
+
+def get_even(num):
+    # add your code here
+    for i in num:
+        if i % 2 == 0 and i not in num_even:
+            num_even.append(i)
+    return num_even
+
+
+result = get_even([1,4,5,6,5,4])
+print(result)
+
+
+# Problem 4
+# add your code here
+min_even = []
+
+
+def get_min_even(x, y):
+    for i in x:
+        if i % 2 == 0 and i not in min_even and i > y:
+            min_even.append(i)
+    return min_even
+
+
+results = get_min_even([1, 4, 5, 6, 5, 4, 8, 10, 13, 12], 2)
+print(results)
+
+
+# Problem 5
+# add your code here
+def word_count(word):
+    words = word.split(" ")
+    count = len(words)
+    return count
+
+
+results = word_count("From a programmer’s point of view the user is a peripheral that types when you issue a read request")
+print(results)

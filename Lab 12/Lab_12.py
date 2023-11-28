@@ -69,10 +69,11 @@ def milage_calculator(x, y, z):
 
 start_milage = float(input("What is the starting milage ran per day?"))
 end_milage = float(input("What is the final milage ran to complete the requirement?"))
-percent_increase = float(input("What is the percentage increase each day?"))
-
-
-print(milage_calculator(start_milage, end_milage, percent_increase))
+percent_increase = float(input("What is the percentage increase each day? (Please type as a whole number)"))
+if 0 <= start_milage < end_milage and end_milage > 0 and percent_increase > 0:
+    print(milage_calculator(start_milage, end_milage, percent_increase))
+else:
+    print("One or more of your values is not an accepted response. Please make sure all of your values are numbers greater than 0, and that your percent increase is written as a whole number.")
 
 
 def read_data_file(filename):

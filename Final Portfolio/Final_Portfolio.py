@@ -163,7 +163,8 @@ while run == "y":
                          "Special Attack \n"
                          "Special Defense \n"
                          "Speed \n"
-                         "Stamina \n")
+                         "Stamina \n"
+                         "------------------- \n")
             stat = stat.lower()
             print(analyze_avg_stats(types, coromon_list, stat))
         case "5":
